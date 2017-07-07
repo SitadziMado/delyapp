@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Projects\Linux\AndroidStudioProjects\delyrelease\app\libs\maskededittext.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f4240378fecb18b004c6406ff3131de148852c5">
+        <dex dex="C:\Projects\Linux\AndroidStudioProjects\delyrelease\app\build\intermediates\pre-dexed\debug\maskededittext_2efeb1f6dff16f75d8bc0fe4e8a64055a5a8be40.jar" />
+    </item>
+
+</items>

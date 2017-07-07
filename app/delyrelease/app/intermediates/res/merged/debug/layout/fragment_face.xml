@@ -1,0 +1,154 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adrax.dely.fragments.FragmentFace"
+    android:background="#FFFFFFFF">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="106dp"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
+                android:src="@drawable/test_user" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    android:text="User"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/design_texts" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="newuser@gmail.com"
+                    android:textSize="@dimen/design_texts" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TabHost
+            android:id="@+id/fhost_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+<!--Tab 1 -->
+                    <LinearLayout
+                        android:id="@+id/ftab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:text="Начните новую доставку!"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/text_cur_dely"
+                                    android:textSize="18sp"
+                                    android:textAlignment="viewStart"
+                                    android:lineSpacingExtra="1sp"
+                                    android:paddingBottom="5dp"
+                                    android:paddingTop="10dp"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_gravity="start"/>
+
+                                <Button
+                                    android:text="Подтвердить доставку"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/btn_finish"
+                                    android:fontFamily="casual"
+                                    style="@android:style/Widget.Material.Button.Colored"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </LinearLayout>
+<!--Tab 2 -->
+                    <LinearLayout
+                        android:id="@+id/ftab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" >
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/face_orders_list"
+                                    android:layout_marginTop="10dp" />
+
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </LinearLayout>
+<!--Tab 3 -->
+                    <LinearLayout
+                        android:id="@+id/ftab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+<!--Tab 4 -->
+                </FrameLayout>
+
+            </LinearLayout>
+        </TabHost>
+
+    </LinearLayout>
+
+</FrameLayout>

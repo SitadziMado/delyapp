@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adrax.dely.fragments.FragmentDelyShow">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_description"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="8sp"
+                android:scrollHorizontally="true"
+                tools:singleLine="false"
+                android:textSize="16sp"
+                android:paddingLeft="15dp"
+                android:paddingTop="20dp"
+                android:text="Hi there" />
+
+            <Button
+                android:text="Доставить"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_start"
+                style="@android:style/Widget.Material.Button.Colored"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

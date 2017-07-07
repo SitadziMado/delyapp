@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adrax.dely.fragments.FragmentOrderShow">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_cur_order"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:text="Hi there"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:text="Подтвердить доставку"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_done"
+                style="@android:style/Widget.Material.Button.Colored"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

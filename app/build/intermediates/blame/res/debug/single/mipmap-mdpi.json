@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\icon.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_arrow_back.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\mipmap-mdpi\\ic_arrow_back.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\logo.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\mipmap-mdpi\\logo.png"
+    }
+]

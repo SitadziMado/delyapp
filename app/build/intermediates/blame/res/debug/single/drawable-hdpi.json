@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_location.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\drawable-hdpi\\ic_action_location.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_settings.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\drawable-hdpi\\ic_action_settings.png"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_refresh.png",
+        "source": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\src\\main\\res\\drawable-hdpi\\ic_action_refresh.png"
+    }
+]

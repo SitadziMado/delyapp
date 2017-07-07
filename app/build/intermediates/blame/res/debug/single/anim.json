@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\b7176ccf8b401c1ae429cf43da97d9a09db1e78e\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Projects\\Linux\\AndroidStudioProjects\\delyrelease\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Adrax\\.android\\build-cache\\4952e5fca5f7218d4f20dd62f9d1d3b30b8b266b\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    }
+]
