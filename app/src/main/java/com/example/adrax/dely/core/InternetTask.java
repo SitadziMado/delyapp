@@ -3,8 +3,6 @@ package com.example.adrax.dely.core;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import org.jetbrains.annotations.Contract;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,7 +32,7 @@ class InternetTask extends AsyncTask<String, Void, String> {
         }
 
         m_address = address;
-        m_callable = callable;
+        m_callback  = callable;
     }
 
     @Override
@@ -76,7 +74,7 @@ class InternetTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        m_callable.call(s);
+        m_callback.call(s);
     }
 
     private String readStream(InputStream in)
@@ -122,5 +120,5 @@ class InternetTask extends AsyncTask<String, Void, String> {
     }
 
     private String m_address = null;
-    private InternetCallback<String> m_callable = null;
+    private InternetCallback<String> m_callback = null;
 }

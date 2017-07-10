@@ -1,5 +1,8 @@
 package com.example.adrax.dely.core;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -11,65 +14,318 @@ public class User {
 
     }
 
+    public static User fromString(String jsonString) {
+        User user = new User();
+        try {
+            JSONObject userData = new JSONObject(jsonString);
+            user.m_about = userData.getString("About");
+            user.m_hash = userData.getString("Hash");
+            user.m_mail = userData.getString("Mail");
+            user.m_middleName = userData.getString("Midname");
+            user.m_money = String.valueOf(userData.getDouble("Money"));
+            user.m_name = userData.getString("Name");
+            user.m_phone = userData.getString("Selnum");
+            user.m_surname = userData.getString("Surname");
+        } catch (JSONException ex) {
+            user = null;
+        }
+
+        return user;
+    }
+
     public static void register(
             String username,
             String password,
             String mail,
-            InternetCallback<Boolean> callback) {
+            final InternetCallback<Boolean> callback) {
         InternetTask task = new InternetTask(REGISTER_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
+                Boolean result = Boolean.FALSE;
 
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case LOGIN_REGISTERED:
+                        result = Boolean.TRUE;
+                        break;
+
+                    case LOGIN_ALREADY_TAKEN:
+                        // result = Boolean.FALSE;
+                        break;
+
+                    default:
+                        // result = Boolean.FALSE;
+                        break;
+                }
+
+                callback.call(result);
             }
         });
+
+        task.execute(
+                "Name", username,
+                "Password", password,
+                "Mail", mail
+        );
     }
 
-    public static void login(String username, String password, InternetCallback<User> callback) {
+    public static void login(
+            String username,
+            String password,
+            final InternetCallback<User> callback) {
         InternetTask task = new InternetTask(LOGIN_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
+                User user = null;
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case INCORRECT_AUTHORIZATION_DATA:
+                        break;
 
+                    case SERVER_PROBLEMS:
+                        break;
+
+                    case REQUEST_INCORRECT:
+                        break;
+
+                    case OTHER:
+                        user = User.fromString(s);
+                        break;
+                }
+
+                callback.call(user);
             }
         });
+
+        task.execute(
+                "Username", username,
+                "Password", password
+        );
     }
 
-    public void logout(InternetCallback<Boolean> callback) {
+    public void logout(final InternetCallback<Boolean> callback) {
         InternetTask task = new InternetTask(LOGOUT_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
-
+                callback.call(Boolean.TRUE);
             }
         });
+
+        task.execute();
     }
 
-    public void order(Order order, InternetCallback<Boolean> callback) {
+    public void order(Order order, final InternetCallback<Boolean> callback) {
         InternetTask task = new InternetTask(ORDER_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
+                Boolean result = Boolean.FALSE;
 
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case ORDER_ERROR:
+                        break;
+
+                    case ORDER_LOADED:
+                        result = Boolean.TRUE;
+                        break;
+                }
+
+                callback.call(result);
             }
         });
+
+        task.execute(
+                "customer", order.getField("customer"),
+                "from", order.getField("from"),
+                "to", order.getField("to"),
+                "cost", order.getField("cost"),
+                "payment", order.getField("payment"),
+                "padik", order.getField("padik"),
+                "code", order.getField("code"),
+                "floor", order.getField("floor"),
+                "ko", order.getField("ko"),
+                "num", order.getField("num"),
+                "wt", order.getField("wt"),
+                "size", order.getField("size"),
+                "hash", order.getField("hash"),
+                "description", order.getField("description")
+        );
     }
 
-    public void syncOrders(InternetCallback<Order[]> callback) {
+    public void syncOrders(final InternetCallback<Order[]> callback) {
         InternetTask task = new InternetTask(SYNC_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
+                Order[] orders = null;
+                if (!s.equals("404")) {
+                    orders = Order.fromString(s);
+                }
 
+                callback.call(orders);
             }
         });
+
+        task.execute();
     }
 
-    public void currentOrder(InternetCallback<Order> callback) {
+    public void currentOrder(final InternetCallback<Order> callback) {
         InternetTask task = new InternetTask(CURRENT_URL, new InternetCallback<String>() {
             @Override
             public void call(String s) {
+                Order[] orders = null;
+                if (!s.equals(ERROR)) {
+                    orders = Order.fromString(s);
+                }
 
+                callback.call(orders[0]);
             }
         });
+
+        task.execute("hash", m_hash);
     }
 
-    private RequestStatus requestStatusFromString(String status) {
+    public void cancel(final InternetCallback<Boolean> callback) {
+        InternetTask task = new InternetTask(CANCEL_URL, new InternetCallback<String>() {
+            @Override
+            public void call(String s) {
+                callback.call(Boolean.FALSE);
+            }
+        });
+
+        task.execute();
+    }
+
+    public void start(Order order, final InternetCallback<Boolean> callback) {
+        InternetTask task = new InternetTask(START_URL, new InternetCallback<String>() {
+            @Override
+            public void call(String s) {
+                Boolean result = Boolean.FALSE;
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case ORDER_BUSY:
+                        break;
+
+                    case ORDER_TOO_MANY:
+                        break;
+
+                    case ORDER_STARTED:
+                        result = Boolean.TRUE;
+                        break;
+                }
+
+                callback.call(result);
+            }
+        });
+
+        if (order == null) {
+            throw new NullPointerException();
+        }
+
+        task.execute(
+                "hash", m_hash,
+                "dely_id", order.getField("dely_id"),
+                "courier", m_login
+        );
+    }
+
+    public void finish(Order order, final InternetCallback<Boolean> callback) {
+        InternetTask task = new InternetTask(FINISH_URL, new InternetCallback<String>() {
+            @Override
+            public void call(String s) {
+                Boolean result = Boolean.FALSE;
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case ORDER_BUSY:
+                        break;
+
+                    case ORDER_STARTED:
+                        result = Boolean.TRUE;
+                        break;
+                }
+
+                callback.call(result);
+            }
+        });
+
+        if (order == null) {
+            throw new NullPointerException();
+        }
+
+        task.execute(
+                "hash", m_hash,
+                "dely_id", order.getField("dely_id")
+        );
+    }
+
+    public void accept(Order order, final InternetCallback<Boolean> callback) {
+        InternetTask task = new InternetTask(ACCEPT_URL, new InternetCallback<String>() {
+            @Override
+            public void call(String s) {
+                Boolean result = Boolean.FALSE;
+                switch (requestStatusFromString(s.toLowerCase())) {
+                    case ORDER_ERROR:
+                        break;
+
+                    case ORDER_OK:
+                        result = Boolean.TRUE;
+                        break;
+                }
+
+                callback.call(result);
+            }
+        });
+
+        if (order == null) {
+            throw new NullPointerException();
+        }
+
+        task.execute(
+                "hash", m_hash,
+                "dely_id", order.getField("dely_id")
+        );
+    }
+
+    public void getOrderStatus(Order order, final InternetCallback<OrderStatus> callback) {
+        InternetTask task = new InternetTask(STATUS_URL, new InternetCallback<String>() {
+            @Override
+            public void call(String s) {
+                OrderStatus result;
+                switch (s.toLowerCase()) {
+                    case WAITING:
+                        result = OrderStatus.WAITING;
+                        break;
+
+                    case DELIVERING:
+                        result = OrderStatus.DELIVERING;
+                        break;
+
+                    case DELIVERED:
+                        result = OrderStatus.DELIVERED;
+                        break;
+
+                    case DELIVERY_DONE:
+                        result = OrderStatus.DELIVERY_DONE;
+                        break;
+
+                    case ERROR:
+                        result = OrderStatus.ERROR;
+                        break;
+
+                    default:
+                        result = OrderStatus.ERROR;
+                        break;
+                }
+
+                callback.call(result);
+            }
+        });
+
+        if (order == null) {
+            throw new NullPointerException();
+        }
+
+        task.execute(
+                "hash", m_hash,
+                "dely_id", order.getField("dely_id")
+        );
+    }
+
+    private static RequestStatus requestStatusFromString(String status) {
         switch (status.toLowerCase())
         {
             case INCORRECT_AUTHORIZATION_DATA:
@@ -107,6 +363,12 @@ public class User {
     private static final String PEEK_URL = null; // "http://adrax.pythonanywhere.com/send_delys";
     private static final String CURRENT_URL = "http://adrax.pythonanywhere.com/current_delivery";
 
+    private static final String CANCEL_URL = null; // "http://adrax.pythonanywhere.com/send_delys";
+    private static final String START_URL = "http://adrax.pythonanywhere.com/ch_dely";
+    private static final String FINISH_URL = "http://adrax.pythonanywhere.com/delivered";
+    private static final String ACCEPT_URL = "http://adrax.pythonanywhere.com/delivery_done";
+    private static final String STATUS_URL = "http://adrax.pythonanywhere.com/chosen";
+
     /// Константы авторизации
     private static final String INCORRECT_AUTHORIZATION_DATA = "incorrect_auth";    /** Некорректная инфа для авторизации */
     private static final String INCORRECT_REQUEST = "405";                          /** Тоже какая-то ошибка */
@@ -129,4 +391,13 @@ public class User {
     private static final String TOO_MANY = "already_enough";      /** Только 1 заказ можно доставлять */
 
     private ArrayList<Order> m_orders = new ArrayList<>();
+    private String m_about;         /** Информация о юзвере  */
+    private String m_hash;          /** Выданный хэш */
+    private String m_mail;          /** Мыло пользователя */
+    private String m_middleName;    /** Его отчество */
+    private String m_money;         /** Его капуста (не используется) */
+    private String m_name;          /** Его имя */
+    private String m_phone;         /** Телефонный номер */
+    private String m_surname;       /** Фамилия */
+    private String m_login;         /** Текущий логин */
 }
